@@ -21,7 +21,8 @@
 #
 ## end license ##
 
-__all__ =["anything", "VERSION"]
+__all__ = ["anything", "VERSION"]
 from ._any import anything
 from ._version import __version__
-VERSION=__version__.split("+")[0]
+
+VERSION = __version__.split("+")[0]
