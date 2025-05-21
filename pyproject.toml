@@ -20,8 +20,8 @@ dependencies = [
 ]
 dynamic = ["version"]
 
-[tool.setuptools.dynamic]
-version = {attr = "seecr.testtools.VERSION"}
+[tool.setuptools_scm]
+version_file = "seecr_testtools/_version.py"
 
 [tool.setuptools]
 include-package-data = true

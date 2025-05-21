@@ -2,7 +2,7 @@
 #
 # Seecr Testtools provides tools for creating pytests
 #
-# Copyright (C) 2024 Seecr (Seek You Too B.V.) http://seecr.nl
+# Copyright (C) 2024-2025 Seecr (Seek You Too B.V.) http://seecr.nl
 #
 # This file is part of "Seecr Testtools"
 #
@@ -21,4 +21,7 @@
 #
 ## end license ##
 
-VERSION = "0.2.0"
+__all__ =["anything", "VERSION"]
+from ._any import anything
+from ._version import __version__
+VERSION=__version__.split("+")[0]
