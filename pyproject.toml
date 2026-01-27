@@ -16,8 +16,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "pytest-asyncio",
-    "pytest",
+    "pytest >= 9.0.2, < 10",
+    "pytest-asyncio >= 1.3.0, < 2",
 ]
 dynamic = ["version"]
 
