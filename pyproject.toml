@@ -16,6 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
+    "pytest-asyncio",
     "pytest",
 ]
 dynamic = ["version"]
@@ -29,3 +30,10 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["."]
 
+[tool.pytest]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+filterwarnings = [
+    "ignore:ast.NameConstant:DeprecationWarning",
+    "ignore::DeprecationWarning:importlib._bootstrap",
+]
