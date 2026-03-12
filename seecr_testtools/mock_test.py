@@ -144,3 +144,10 @@ async def test_async_immitate_override():
     m.mock_method("method_False", 42)
     assert m.method_False() == 42
     assert len(m.calls("method_False")) == 1
+
+
+def test_mock_blank_callable():
+    m = Mock.blank(get={"a": 1}.get)
+
+    assert m.get("a") == 1
+    assert len(m.calls("get")) == 1

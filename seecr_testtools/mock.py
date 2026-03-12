@@ -57,7 +57,7 @@ class MockMethod:
 
     def __call__(self, *args, **kwargs):
         self._calls.append(MockCall(self, *args, **kwargs))
-        if ismethod(self._value):
+        if callable(self._value):
             return self._value(*args, **kwargs)
         return self._value
 
@@ -70,7 +70,7 @@ class MockAsyncMethod(MockMethod):
 
     async def __call__(self, *args, **kwargs):
         self._calls.append(MockCall(self, *args, **kwargs))
-        if ismethod(self._value):
+        if callable(self._value):
             return await self._value(*args, **kwargs)
         return self._value
 
