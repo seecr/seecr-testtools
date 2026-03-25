@@ -2,7 +2,7 @@
 #
 # Seecr Testtools provides tools for creating pytests
 #
-# Copyright (C) 2024-2026 Seecr (Seek You Too B.V.) http://seecr.nl
+# Copyright (C) 2026 Seecr (Seek You Too B.V.) http://seecr.nl
 #
 # This file is part of "Seecr Testtools"
 #
@@ -21,8 +21,13 @@
 #
 ## end license ##
 
-__all__ = ["anything", "VERSION", "login_user"]
-from ._any import anything
-from ._version import __version__
+__all__ = ["login_user"]
 
-VERSION = __version__.split("+")[0]
+
+def login_user(env, username, password):
+    response = env.client.post(
+        env.actions.register("login"), data={"username": username, "password": password}
+    )
+    assert response.status_code == 200 and response.json()["success"]
+    env.client.cookies.clear()
+    env.client.cookies["session"] = response.cookies["session"]
