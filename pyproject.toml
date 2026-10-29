@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "seecr-testtools"
 authors = [
     {name = "Thijs Janssen", email = "thijs@seecr.nl"},
+    {name = "Johan Jonkers", email = "johan@seecr.nl"},
 ]
 description = "Test tools for seecr"
 readme = "README.md"

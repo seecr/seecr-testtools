@@ -2,7 +2,7 @@
 #
 # Seecr Testtools provides tools for creating pytests
 #
-# Copyright (C) 2024 Seecr (Seek You Too B.V.) http://seecr.nl
+# Copyright (C) 2024, 2026 Seecr (Seek You Too B.V.) https://seecr.nl
 #
 # This file is part of "Seecr Testtools"
 #
