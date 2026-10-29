@@ -8,13 +8,14 @@ authors = [
     {name = "Thijs Janssen", email = "thijs@seecr.nl"},
     {name = "Johan Jonkers", email = "johan@seecr.nl"},
 ]
-description = "Test tools for seecr"
+description = "Small pytest helpers: wildcards in assertions, a recording mock and a login helper for web app tests"
 readme = "README.md"
 requires-python = ">=3.11"
-keywords = ["test", "pytest"]
+keywords = ["test", "testing", "pytest", "mock", "assertions", "wildcard"]
 license = "MIT"
 license-files = ["LICENSE"]
 classifiers = [
+    "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.11",

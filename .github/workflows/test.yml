@@ -1,7 +1,9 @@
 name: Tests
 
+# Version tags are tested by the push of the commit itself; publish.yml handles the tag.
 on:
   push:
+    branches: ["**"]
   pull_request:
 
 jobs:
