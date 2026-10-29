@@ -12,7 +12,7 @@ description = "Test tools for seecr"
 readme = "README.md"
 requires-python = ">=3.11"
 keywords = ["test", "pytest"]
-license = "GPL-3.0-or-later"
+license = "MIT"
 license-files = ["LICENSE"]
 classifiers = [
     "Programming Language :: Python :: 3",

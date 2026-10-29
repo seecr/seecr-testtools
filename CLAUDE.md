@@ -21,7 +21,7 @@ Pytest is configured in `pyproject.toml` under `[tool.pytest]`: pytest-asyncio r
 ## Conventions
 
 - Tests sit next to the module they test as `<module>_test.py`, written as plain pytest functions.
-- Every source file starts with the GPLv3 `## begin license ## ... ## end license ##` header (template data in `doc/license.conf`). Copy it into new files and keep the copyright year(s) current.
+- Every source file starts with the MIT `## begin license ## ... ## end license ##` header (template data in `doc/license.conf`). Copy it into new files and keep the copyright year(s) current.
 - Versions come from git tags via `setuptools_scm` (tags like `0.4.1`); `seecr_testtools/_version.py` is generated and git-ignored — don't edit it. The package root imports it, so the package must be installed (`pip install -e .`) before tests run.
 - Pushing a version tag to GitHub publishes that version to PyPI (`.github/workflows/publish.yml`), and PyPI never accepts a version twice. Don't push tags unless asked.
 - `anything` and `login_user` are exported from the package root; `Mock` is imported from `seecr_testtools.mock`.

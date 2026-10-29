@@ -89,4 +89,4 @@ decorator: pytest-asyncio runs in auto mode.
 
 Copyright (C) 2024-2026 Seecr (Seek You Too B.V.)
 
-Licensed under the [GNU General Public License v3.0 or later](LICENSE).
+Licensed under the [MIT License](LICENSE).
