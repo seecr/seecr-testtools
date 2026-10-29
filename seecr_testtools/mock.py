@@ -27,8 +27,10 @@ from inspect import ismethod, iscoroutinefunction
 class Mock:
 
     @classmethod
-    def immitate(cls, obj):
+    def imitate(cls, obj):
         return cls(obj=obj)
+
+    immitate = imitate  # original misspelling, kept for compatibility
 
     @classmethod
     def blank(cls, **kwargs):
@@ -44,7 +46,7 @@ class Mock:
     def mock_method(self, name, value, is_async=False):
         if self._obj is not None:
             if (method := getattr(self._obj, name, None)) is None:
-                raise RuntimeError(f"Method not found for immitating: {name}")
+                raise RuntimeError(f"Method not found for imitating: {name}")
             is_async = iscoroutinefunction(method)
 
         method = MockAsyncMethod(name, value) if is_async else MockMethod(name, value)

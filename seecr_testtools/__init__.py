@@ -23,6 +23,7 @@
 
 __all__ = ["anything", "VERSION", "login_user"]
 from ._any import anything
+from .wui import login_user
 from ._version import __version__
 
 VERSION = __version__.split("+")[0]

@@ -21,6 +21,8 @@
 #
 ## end license ##
 
+import pytest
+
 from .mock import Mock
 
 
@@ -70,7 +72,7 @@ def test_mock_default():
     )
 
 
-def test_immitate():
+def test_imitate():
     class A:
         def method_True(self):
             return True
@@ -80,7 +82,7 @@ def test_immitate():
 
     a = A()
 
-    m = Mock.immitate(a)
+    m = Mock.imitate(a)
     assert m.method_True() is True
     assert len(m.calls("method_True")) == 1
     assert m.method_True() is True
@@ -89,7 +91,7 @@ def test_immitate():
     assert len(m.calls("method_False")) == 1
 
 
-def test_immitate_override():
+def test_imitate_override():
     class A:
         def method_True(self):
             return True
@@ -99,18 +101,16 @@ def test_immitate_override():
 
     a = A()
 
-    m = Mock.immitate(a)
+    m = Mock.imitate(a)
     m.mock_method("method_True", 42)
     assert m.method_True() == 42
     assert len(m.calls("method_True")) == 1
 
-    try:
+    with pytest.raises(RuntimeError, match="Method not found for imitating: method_Bool"):
         m.mock_method("method_Bool", 42)
-    except RuntimeError as e:
-        assert str(e) == "Method not found for immitating: method_Bool"
 
 
-def test_immitate_override_called():
+def test_imitate_override_called():
     class A:
         def method_True(self):
             return True
@@ -120,7 +120,7 @@ def test_immitate_override_called():
 
     a = A()
 
-    m = Mock.immitate(a)
+    m = Mock.imitate(a)
     m.mock_method("method_True", 42)
     assert m.method_False() == 42
     assert len(m.calls("method_True")) == 1
@@ -149,7 +149,7 @@ async def test_async_mock():
     )
 
 
-async def test_async_immitate_override():
+async def test_async_imitate_override():
     class A:
         async def method_True(self):
             return True
@@ -159,7 +159,7 @@ async def test_async_immitate_override():
 
     a = A()
 
-    m = Mock.immitate(a)
+    m = Mock.imitate(a)
     m.mock_method("method_True", 42)
     assert await m.method_True() == 42
     assert len(m.calls("method_True")) == 1
@@ -174,3 +174,7 @@ def test_mock_blank_callable():
 
     assert m.get("a") == 1
     assert len(m.calls("get")) == 1
+
+
+def test_immitate_alias():
+    assert Mock.immitate(object()).__class__ is Mock
